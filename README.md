@@ -14,19 +14,10 @@ git clone <repository-url>
 cd <repository-directory>
 ```
 
-2. Установите зависимости:
-```bash
-pip install -r requirements.txt
-```
-
-3. Создайте файл `.env` и добавьте в него токен вашего бота:
-```bash
-cp .env.example .env
-```
-Отредактируйте файл `.env` и замените `your_bot_token_here` на ваш токен от @BotFather.
+2. Импортируйте BOT_TOKEN в docker-compose.yaml
 
 ## Запуск
 
 ```bash
-python bot.py
+docker-compose up -d --build 
 ```
