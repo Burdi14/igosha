@@ -7,7 +7,7 @@ from handlers import (
     process_search, process_question, back_to_questions, back_to_main, back_to_search
 )
 
-# Configure logging
+# Set up logging
 logging.basicConfig(level=logging.INFO)
 
 # Initialize bot and dispatcher

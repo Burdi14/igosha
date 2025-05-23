@@ -15,7 +15,7 @@ def load_questions_from_file(filename):
             if line[0].isdigit() and '. ' in line:
                 if current_question:
                     questions[current_question] = '\n'.join(current_answer)
-                current_question = line.split('. ', 1)[1]  # Убираем номер вопроса
+                current_question = line.split('. ', 1)[1]
                 current_answer = []
             else:
                 current_answer.append(line)
@@ -63,7 +63,7 @@ def search_questions(query):
         questions = load_questions_from_file(filename)
         for i, (question, answer) in enumerate(questions.items(), 1):
             if query in question.lower() or query in answer.lower():
-                # Сортируем результаты: сначала совпадения в вопросе, потом в ответе
+                # Sort results: first matches in the question, then in the answer
                 priority = 0
                 if query in question.lower():
                     priority = 1
@@ -75,9 +75,9 @@ def search_questions(query):
                     'priority': priority
                 })
     
-    # Сортируем результаты по приоритету (сначала совпадения в вопросе)
+    # Sort results by priority (first matches in the question)
     results.sort(key=lambda x: (-x['priority'], x['question']))
     return results
 
-# Load all questions
+# Loading all questions
 QUESTIONS = {topic: load_questions_from_file(filename) for topic, filename in TOPICS.items()} 

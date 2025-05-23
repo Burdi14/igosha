@@ -1,0 +1,12 @@
+services:
+  tg-bot-igosha:
+    container_name: tg-bot-igosha
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - BOT_TOKEN=
+    volumes:
+      - ./src-bot/files:/app/files
+      - ./src-bot/questions:/app/questions
+    restart: unless-stopped

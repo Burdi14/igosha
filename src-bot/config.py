@@ -1,13 +1,8 @@
 import os
 from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
-
-# Bot settings
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
-# Topics
 TOPICS = {
     "ВУЗ": "questions/vuz.txt",
     "Медицина": "questions/medicine.txt",
@@ -15,7 +10,6 @@ TOPICS = {
     "Военкомат": "questions/military.txt"
 }
 
-# Emojis
 EMOJIS = {
     "question": "❓",
     "answer": "📝",
@@ -25,7 +19,6 @@ EMOJIS = {
     "info": "ℹ️"
 }
 
-# Messages
 MESSAGES = {
     "welcome": "Добро пожаловать! Я бот-помощник МГТУ. Выберите интересующую вас тему:",
     "select_topic": "Выберите интересующую вас тему:",
